@@ -48,8 +48,8 @@ This package contains header files needed if you wish to build applications
 based on %{name}.
 
 %files -n %{devkf5modemmanagerqt}
-%{_kde5_includedir}/KF5/KModemManagerQt
-%{_kde5_includedir}/KF5/kmodemmanagerqt_version.h
+%{_kde5_includedir}/KF5/ModemManagerQt
+%{_kde5_includedir}/KF5/modemmanagerqt_version.h
 %{_kde5_libdir}/cmake/KF5ModemManagerQt
 %{_kde5_libdir}/libKF5ModemManagerQt.so
 %{_kde5_mkspecsdir}/*.pri
