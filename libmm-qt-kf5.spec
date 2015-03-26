@@ -2,7 +2,7 @@
 
 Summary:	Plasma 5 Qt wrapper for ModemManager API
 Name:		%{oname}-kf5
-Version:	5.2.1
+Version:	5.2.2
 Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
