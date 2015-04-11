@@ -1,43 +1,45 @@
-%define oname libmm-qt
+%define fw_version 5.9
 
-Summary:	Plasma 5 Qt wrapper for ModemManager API
-Name:		%{oname}-kf5
-Version:	5.2.2
+Summary:	KDE Frameworks 5 Qt wrapper for ModemManager API
+Name:		modemmanager-qt
+Version:	5.9.0
 Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		https://www.kde.org/
-Source0:	ftp://ftp.kde.org/pub/kde/stable/plasma/%{version}/%{oname}-%{version}.tar.xz
+Source0:	ftp://ftp.kde.org/pub/kde/stable/frameworks/%{fw_version}/%{name}-%{version}.tar.xz
 BuildRequires:	extra-cmake-modules
 BuildRequires:	pkgconfig(Qt5Core)
 BuildRequires:	pkgconfig(Qt5DBus)
+BuildRequires:	pkgconfig(Qt5Test)
 BuildRequires:	pkgconfig(Qt5Xml)
 BuildRequires:	pkgconfig(ModemManager)
 
 %description
-Plasma 5 Qt wrapper for ModemManager API.
+KDE Frameworks 5 Qt wrapper for ModemManager API.
 
 #----------------------------------------------------------------------------
 
-%define kf5modemmanagerqt_major 5
+%define kf5modemmanagerqt_major 6
 %define libkf5modemmanagerqt %mklibname kf5modemmanagerqt %{kf5modemmanagerqt_major}
 
 %package -n %{libkf5modemmanagerqt}
-Summary:	Plasma 5 Qt wrapper for ModemManager API shared library
+Summary:	KDE Frameworks 5 Qt wrapper for ModemManager API shared library
 Group:		System/Libraries
 
 %description -n %{libkf5modemmanagerqt}
-Plasma 5 Qt wrapper for ModemManager API shared library.
+KDE Frameworks 5 Qt wrapper for ModemManager API shared library.
 
 %files -n %{libkf5modemmanagerqt}
-%{_kde5_libdir}/libKF5ModemManagerQt.so.%{kf5modemmanagerqt_major}*
+%{_kde5_libdir}/libKF5ModemManagerQt.so.%{kf5modemmanagerqt_major}
+%{_kde5_libdir}/libKF5ModemManagerQt.so.%{version}
 
 #----------------------------------------------------------------------------
 
 %define devkf5modemmanagerqt %mklibname kf5modemmanagerqt -d
 
 %package -n %{devkf5modemmanagerqt}
-Summary:	Development files for Plasma 5 Qt wrapper for ModemManager API
+Summary:	Development files for KDE Frameworks 5 Qt wrapper for ModemManager API
 Group:		Development/KDE and Qt
 Requires:	%{libkf5modemmanagerqt} = %{EVRD}
 Provides:	%{name}-devel = %{EVRD}
@@ -57,7 +59,7 @@ based on %{name}.
 #----------------------------------------------------------------------------
 
 %prep
-%setup -qn %{oname}-%{version}
+%setup -q
 
 %build
 %cmake_kde5
