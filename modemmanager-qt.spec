@@ -12,7 +12,7 @@ BuildRequires:	cmake(ECM)
 BuildRequires:	cmake(Qt5Core)
 BuildRequires:	cmake(Qt5DBus)
 BuildRequires:	cmake(Qt5Xml)
-BuildRequires:	pngconfig(ModemManager)
+BuildRequires:	pkgconfig(ModemManager)
 
 %description
 Qt wrapper for ModemManager DBus API.
