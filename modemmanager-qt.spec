@@ -60,14 +60,11 @@ based on %{name}.
 
 %prep
 %setup -q
+%cmake_kde5
 
 %build
-%cmake_kde5
 %ninja -C build
 
 %install
 %ninja_install -C build
-<<<<<<< HEAD
 
-=======
->>>>>>> 192d54d1ad96535480d9ec85572d5d8109de6a0b
