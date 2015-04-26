@@ -31,8 +31,8 @@ Group:		System/Libraries
 KDE Frameworks 5 Qt wrapper for ModemManager API shared library.
 
 %files -n %{libkf5modemmanagerqt}
-%{_kde5_libdir}/libKF5ModemManagerQt.so.%{kf5modemmanagerqt_major}
-%{_kde5_libdir}/libKF5ModemManagerQt.so.%{version}
+%{_libdir}/libKF5ModemManagerQt.so.%{kf5modemmanagerqt_major}
+%{_libdir}/libKF5ModemManagerQt.so.%{version}
 
 #----------------------------------------------------------------------------
 
@@ -42,19 +42,17 @@ KDE Frameworks 5 Qt wrapper for ModemManager API shared library.
 Summary:	Development files for KDE Frameworks 5 Qt wrapper for ModemManager API
 Group:		Development/KDE and Qt
 Requires:	%{libkf5modemmanagerqt} = %{EVRD}
-Provides:	%{name}-devel = %{EVRD}
-Provides:	kf5modemmanagerqt-devel = %{version}
 
 %description -n %{devkf5modemmanagerqt}
 This package contains header files needed if you wish to build applications
 based on %{name}.
 
 %files -n %{devkf5modemmanagerqt}
-%{_kde5_includedir}/KF5/ModemManagerQt
-%{_kde5_includedir}/KF5/modemmanagerqt_version.h
-%{_kde5_libdir}/cmake/KF5ModemManagerQt
-%{_kde5_libdir}/libKF5ModemManagerQt.so
-%{_kde5_mkspecsdir}/*.pri
+%{_includedir}/KF5/ModemManagerQt
+%{_includedir}/KF5/modemmanagerqt_version.h
+%{_libdir}/cmake/KF5ModemManagerQt
+%{_libdir}/libKF5ModemManagerQt.so
+%{_libdir}/qt5/mkspecs/modules/*.pri
 
 #----------------------------------------------------------------------------
 
@@ -67,4 +65,3 @@ based on %{name}.
 
 %install
 %ninja_install -C build
-
