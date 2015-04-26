@@ -20,7 +20,7 @@ Qt wrapper for ModemManager DBus API.
 #----------------------------------------------------------------------------
 
 %prep
-%setup -qn %{oname}-%{version}
+%setup -q
 %cmake_kde5
 
 %build
