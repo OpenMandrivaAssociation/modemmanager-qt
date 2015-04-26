@@ -1,9 +1,15 @@
+# (tpg) looks like libmm-qt5 is providing same libraries but with lower major
+
+%define major 6
+%define libname %mklibname KF5ModemManagerQt %{major}
+%define devname %mklibname KF5ModemManagerQt -d
+
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 
 Summary:	KDE Frameworks 5 Qt wrapper for ModemManager API
 Name:		modemmanager-qt
 Version:	5.9.0
-Release:	1
+Release:	2
 License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		https://www.kde.org/
@@ -20,34 +26,30 @@ KDE Frameworks 5 Qt wrapper for ModemManager API.
 
 #----------------------------------------------------------------------------
 
-%define kf5modemmanagerqt_major 6
-%define libkf5modemmanagerqt %mklibname kf5modemmanagerqt %{kf5modemmanagerqt_major}
-
-%package -n %{libkf5modemmanagerqt}
+%package -n %{libname}
 Summary:	KDE Frameworks 5 Qt wrapper for ModemManager API shared library
 Group:		System/Libraries
 
-%description -n %{libkf5modemmanagerqt}
+%description -n %{libname}
 KDE Frameworks 5 Qt wrapper for ModemManager API shared library.
 
-%files -n %{libkf5modemmanagerqt}
-%{_libdir}/libKF5ModemManagerQt.so.%{kf5modemmanagerqt_major}
+%files -n %{libname}
+%{_libdir}/libKF5ModemManagerQt.so.%{major}
 %{_libdir}/libKF5ModemManagerQt.so.%{version}
 
 #----------------------------------------------------------------------------
 
-%define devkf5modemmanagerqt %mklibname kf5modemmanagerqt -d
-
-%package -n %{devkf5modemmanagerqt}
+%package -n %{develname}
 Summary:	Development files for KDE Frameworks 5 Qt wrapper for ModemManager API
 Group:		Development/KDE and Qt
-Requires:	%{libkf5modemmanagerqt} = %{EVRD}
+Requires:	%{libname} = %{EVRD}
+Requires:	pkgconfig(ModemManager)
 
-%description -n %{devkf5modemmanagerqt}
+%description -n %{develname}
 This package contains header files needed if you wish to build applications
 based on %{name}.
 
-%files -n %{devkf5modemmanagerqt}
+%files -n %{develname}
 %{_includedir}/KF5/ModemManagerQt
 %{_includedir}/KF5/modemmanagerqt_version.h
 %{_libdir}/cmake/KF5ModemManagerQt
