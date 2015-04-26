@@ -39,17 +39,17 @@ KDE Frameworks 5 Qt wrapper for ModemManager API shared library.
 
 #----------------------------------------------------------------------------
 
-%package -n %{develname}
+%package -n %{devname}
 Summary:	Development files for KDE Frameworks 5 Qt wrapper for ModemManager API
 Group:		Development/KDE and Qt
 Requires:	%{libname} = %{EVRD}
 Requires:	pkgconfig(ModemManager)
 
-%description -n %{develname}
+%description -n %{devname}
 This package contains header files needed if you wish to build applications
 based on %{name}.
 
-%files -n %{develname}
+%files -n %{devname}
 %{_includedir}/KF5/ModemManagerQt
 %{_includedir}/KF5/modemmanagerqt_version.h
 %{_libdir}/cmake/KF5ModemManagerQt
