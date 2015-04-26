@@ -27,4 +27,4 @@ Qt wrapper for ModemManager DBus API.
 %ninja -C build
 
 %install
-%ninja_install
+%ninja_install -C build
