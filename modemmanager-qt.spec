@@ -67,4 +67,7 @@ based on %{name}.
 
 %install
 %ninja_install -C build
+<<<<<<< HEAD
 
+=======
+>>>>>>> 192d54d1ad96535480d9ec85572d5d8109de6a0b
