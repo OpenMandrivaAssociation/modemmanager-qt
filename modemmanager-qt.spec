@@ -8,8 +8,8 @@
 
 Summary:	KDE Frameworks 5 Qt wrapper for ModemManager API
 Name:		modemmanager-qt
-Version:	5.51.0
-Release:	2
+Version:	5.52.0
+Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		https://www.kde.org/
@@ -20,15 +20,20 @@ BuildRequires:	pkgconfig(Qt5DBus)
 BuildRequires:	pkgconfig(Qt5Test)
 BuildRequires:	pkgconfig(Qt5Xml)
 BuildRequires:	pkgconfig(ModemManager)
+Requires:	%{libname} = %{EVRD}
 
 %description
 KDE Frameworks 5 Qt wrapper for ModemManager API.
+
+%files
+%{_sysconfdir}/xdg/*.categories
 
 #----------------------------------------------------------------------------
 
 %package -n %{libname}
 Summary:	KDE Frameworks 5 Qt wrapper for ModemManager API shared library
 Group:		System/Libraries
+Requires:	%{name} = %{EVRD}
 
 %description -n %{libname}
 KDE Frameworks 5 Qt wrapper for ModemManager API shared library.
