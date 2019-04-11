@@ -20,6 +20,9 @@ BuildRequires:	pkgconfig(Qt5DBus)
 BuildRequires:	pkgconfig(Qt5Test)
 BuildRequires:	pkgconfig(Qt5Xml)
 BuildRequires:	pkgconfig(ModemManager)
+# For building QCH docs
+BuildRequires:	qt5-assistant
+BuildRequires:	doxygen
 Requires:	%{libname} = %{EVRD}
 
 %description
@@ -60,6 +63,18 @@ based on %{name}.
 %{_libdir}/cmake/KF5ModemManagerQt
 %{_libdir}/libKF5ModemManagerQt.so
 %{_libdir}/qt5/mkspecs/modules/*.pri
+
+#----------------------------------------------------------------------------
+%package -n %{name}-devel-docs
+Summary: Developer documentation for %{name} for use with Qt Assistant
+Group: Documentation
+Suggests: %{devname} = %{EVRD}
+
+%description -n %{name}-devel-docs
+Developer documentation for %{name} for use with Qt Assistant
+
+%files -n %{name}-devel-docs
+%{_docdir}/qt5/*.{tags,qch}
 
 #----------------------------------------------------------------------------
 
