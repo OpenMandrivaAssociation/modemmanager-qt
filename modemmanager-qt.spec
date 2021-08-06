@@ -8,7 +8,7 @@
 
 Summary:	KDE Frameworks 5 Qt wrapper for ModemManager API
 Name:		modemmanager-qt
-Version:	5.84.0
+Version:	5.85.0
 Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
